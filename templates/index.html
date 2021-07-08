@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+
+{% block main %}
+    <h5>Holdings</h5><br>
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+               {% for stock in holdings %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.company_name }}</td>
+                    <td>{{ stock.quantity }}</td>
+                    <td>${{ stock.price_per_share }}</td>
+                    <td>${{ stock.worth }}</td>
+                </tr>
+                {% endfor %}
+
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{ total_worth }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

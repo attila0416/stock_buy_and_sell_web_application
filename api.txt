@@ -1,0 +1,4 @@
+export API_KEY=value
+
+value from https://iexcloud.io/console/tokens
+Copy the key that appears under the Token column (it should begin with pk_)
